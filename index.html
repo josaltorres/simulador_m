@@ -425,7 +425,7 @@ h2.verdict{font-size:clamp(2.5rem,6.5vw,4.375rem);font-weight:500;letter-spacing
 
     <div class="hero-tag"><span class="micro">Cómo funciona el juego</span><span class="rule"></span></div>
     <div class="termsheet">
-      <div class="ts-row"><span class="ts-key">Con cuánto empiezas</span><span class="ts-val">El dinero que tienes disponible al inicio</span><span class="ts-num">$3,000.00</span></div>
+      <div class="ts-row"><span class="ts-key">Con cuánto empiezas</span><span class="ts-val">El dinero que tienes disponible al inicio</span><span class="ts-num">$1,500.00</span></div>
       <div class="ts-row"><span class="ts-key">Duración</span><span class="ts-val">Turnos que dura el juego</span><span class="ts-num">15 turnos</span></div>
       <div class="ts-row"><span class="ts-key">Cómo avanzas</span><span class="ts-val">Tiras un dado de seis caras</span><span class="ts-num">1 – 6</span></div>
       <div class="ts-row"><span class="ts-key">Tu sueldo</span><span class="ts-val">Lo que te pagan cada vez que caes en un turno de pago</span><span class="ts-num">$1,000.00</span></div>
@@ -565,7 +565,7 @@ h2.verdict{font-size:clamp(2.5rem,6.5vw,4.375rem);font-weight:500;letter-spacing
       <div>
         <div class="sec-head"><span class="micro">Posiciones</span><span class="rule"></span></div>
         <div class="ledger">
-          <div class="led-row"><span class="led-k">Tu efectivo disponible</span><span class="led-v" id="l-cash">$3,000</span></div>
+          <div class="led-row"><span class="led-k">Tu efectivo disponible</span><span class="led-v" id="l-cash">$1,500</span></div>
           <div class="led-row"><span class="led-k">Tu ahorro</span><span class="led-v" id="l-sav" style="color:var(--up)">$0</span></div>
           <div class="led-row"><span class="led-k">Tu sueldo por turno</span><span class="led-v" id="l-sal" style="color:var(--acid)">$1,000</span></div>
           <div class="led-row" id="debt-row" style="display:none"><span class="led-k">Deuda</span><span class="led-v" id="l-debt" style="color:var(--down)">$0</span></div>
@@ -645,7 +645,7 @@ h2.verdict{font-size:clamp(2.5rem,6.5vw,4.375rem);font-weight:500;letter-spacing
 
 <script>
 // ═══════ CONFIG ═══════
-const START=3000;
+const START=1500;
 const TOTAL_NODES=15, SALARY=1000, QUIZ_BONUS=350, CYCLE_BONUS=400;
 
 const TYPES={
@@ -983,7 +983,7 @@ function startGame(){
   initState();showScreen('screen-game');
   renderBoard();renderKey();updateDash();updateStrip();
   setNodePanel('start',0);renderDie(1);
-  log('<b>SESIÓN INICIADA</b> · Disponible $3,000','info');
+  log('<b>SESIÓN INICIADA</b> · Disponible '+fmt(START),'info');
   hideAll();$('btn-roll').disabled=false;$('dice-out').textContent='—';startTicker();
 }
 
